@@ -1,5 +1,5 @@
 <% if (!user) { %>
-	<h2>Welcome! Please log in.</h2>
+	<h2>Welcome! <a href="/auth/bong">Login with Bong</a></h2>
 <% } else { %>
-	<h2>Hello, <%= user.name %>.</h2>
+	<h2>Hello, <%= user.name %>. <a href="/account">Account</a></h2>
 <% } %>

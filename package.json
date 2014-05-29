@@ -1,0 +1,21 @@
+{
+  "name": "bong-weekly",
+  "version": "0.0.1",
+  "bong": {
+    "clientID": "1",
+    "clientSecret": "1"
+  },
+  "dependencies": {
+    "express": "4.*",
+    "cookie-parser": "~1.0.1",
+    "express-session": "~1.0.4",
+    "body-parser": "~1.0.2",
+    "method-override": "*",
+    "ejs": ">= 0.0.0",
+    "passport": ">= 0.0.0",
+    "passport-bong": ">= 0.0.0",
+    "request": ">= 0.0.0",
+    "moment": ">= 0.0.0",
+    "promise": "~5.0.0"
+  }
+}
