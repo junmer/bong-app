@@ -16,8 +16,11 @@ var express = require('express')
 var app = express();
 
 // configure Express
+
+app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 app.use(cookieParser());
 app.use(bodyParser());
@@ -28,7 +31,6 @@ app.use(session({secret: pkg.name}));
 // persistent login sessions (recommended).
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.static(__dirname + '/public'));
 
 // configure APP 
 var APP_HOST = 'http://127.0.0.1:3000';
@@ -147,7 +149,7 @@ app.get('/logout', function(req, res){
  * @param  {[type]} res [description]
  * @return {[type]}     [description]
  */
-app.get('/', function(req, res){
+app.get('/', ensureAuthenticated, function(req, res){
   res.render('index', { user: req.user });
 });
 

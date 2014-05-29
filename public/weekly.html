@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>bong weekly</title>
+        <meta name="description" content="bong weekly">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="stylesheet" href="/asset/common/css/main.css">
+        <script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>        
+        <script src="http://cdn.bootcss.com/raphael/2.1.2/raphael-min.js"></script>
+        <script src="http://cdn.bootcss.com/graphael/0.5.1/g.raphael-min.js"></script>
+        <script src="http://cdn.bootcss.com/graphael/0.5.1/g.dot-min.js"></script>
+
+        <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?335ed71079c070c45bf319bc38c818f4";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+
+    </head>
+    <body class="bo-wrap">
+
+        <header class="bo-header">
+            <h1><%= user.name %>'s weekly</h1>
+        </header>
+
+        <section class="bo-hero" >
+            <div id="bo-weekly-chart"></div>
+        </section>
+
+        <footer class="bo-footer" >
+            bong open
+        </footer>
+        
+        <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-10/esl.js"></script>
+
+        <script>
+            require.config({
+        'baseUrl': '/asset',
+        'paths': {}
+    });
+            require(['weekly/main']);
+        </script>
+
+    </body>
+</html>
